@@ -1,5 +1,5 @@
 # qc_lowest_eigenvalue
-Routine to find lowest eigenvalue of a given matrix using quantum architecture 
+Routine to find lowest eigenvalue of a given matrix using quantum computing techniques (self composed VQE-esque)
 
 * pauli_decomposition.py: Decomposes any 4x4 matrix into individual Pauli terms
 * 
