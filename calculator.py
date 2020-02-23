@@ -11,8 +11,8 @@ from pyquil.api._qvm import QVM
 from pyquil.gates import RX, RY, MEASURE, STANDARD_GATES
 from pyquil.paulis import PauliTerm, PauliSum
 
-H = PauliSum([ PauliTerm.from_list([("X",1),("X",0)],coefficient=0.5), PauliTerm.from_list([("Y",1),("Y",0)],coefficient=0.5), PauliTerm.from_list([("Z",1),("Z",0)],coefficient=0.5), 
-            PauliTerm.from_list([("I",1),("I",0)],coefficient=-0.5) ]) 
+H = PauliSum([ PauliTerm.from_list([("X",1),("X",0)],coefficient=1), PauliTerm.from_list([("Y",1),("Y",0)],coefficient=1), PauliTerm.from_list([("Z",1),("Z",0)],coefficient=1), 
+            PauliTerm.from_list([("I",1),("I",0)],coefficient=-1) ]) 
 
 # Decide n_qubits by size of your hamiltonian matrix
 # depth decides the amount of entanglement between qubits
