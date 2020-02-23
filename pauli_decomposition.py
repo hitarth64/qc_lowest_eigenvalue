@@ -23,6 +23,6 @@ def decompose(H):
     for i in range(4):
         for j in range(4):
             label = labels[i] + ' \tp ' + labels[j]
-            a_ij = 0.25 * HS(kron(S[i], S[j]), H)
+            a_ij = 0.5 * HS(kron(S[i], S[j]), H)
             if a_ij != 0.0:
                 print("%s\t*\t( %s )" % (a_ij, label))
