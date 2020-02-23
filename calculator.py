@@ -2,7 +2,7 @@ from pyquil.paulis import PauliSum, PauliTerm
 
 from collections import Counter
 from typing import List, Union
-
+import pyquil
 import funcsigs
 import numpy as np
 from pyquil import Program
@@ -16,7 +16,7 @@ H = PauliSum([ PauliTerm.from_list([("X",1),("X",0)],coefficient=0.5), PauliTerm
 
 # Decide n_qubits by size of your hamiltonian matrix
 # depth decides the amount of entanglement between qubits
-n_qbits = 2; depth = 3
+n_qubits = 2; depth = 3
 
 def ansatz(params):
   p = Program()
@@ -46,6 +46,8 @@ def expectation_operator(hamiltonian, ansatz_):
   expectation = sum(list(map(lambda x: x[0] * x[1], zip(result_overlaps, operator_coeffs))))
   return expectation.real
 
-liss = [expectation_operator(H,ansatz([i,j])) for i in angle_1 for j in angle_2] 
+angle_1 = np.linspace(0, 2*np.pi, 40)
+
+liss = [expectation_operator(H,ansatz([i,j])) for i in angle_1 for j in angle_1] 
 
 print(min(liss))
