@@ -46,4 +46,6 @@ def expectation_operator(hamiltonian, ansatz_):
   expectation = sum(list(map(lambda x: x[0] * x[1], zip(result_overlaps, operator_coeffs))))
   return expectation.real
 
-for 
+liss = [expectation_operator(H,ansatz([i,j])) for i in angle_1 for j in angle_2] 
+
+print(min(liss))
