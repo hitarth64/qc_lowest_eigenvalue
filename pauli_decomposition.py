@@ -1,7 +1,7 @@
 import numpy as np
 from numpy import kron
 
-# Using the fact that aij = 1/4 * tr((si \tp sj)H) where sk is one of the Pauli matrices and H is the input matrix; 
+# Using the fact that aij = 1/2 * tr((si \tp sj)H) where sk is one of the Pauli matrices and H is the input matrix; 
 # aij corresponds to the coefficient of the term with tensor product of Pauli matrix sigma_i and sigma_j
 
 def HS(M1, M2):
