@@ -21,7 +21,7 @@ n_qbits = 2; depth = 3
 def ansatz(params):
   p = Program()
   for i in range(depth):
-    p += pyquil.gates.CNOT(2,0)
+    p += pyquil.gates.CNOT(1,0)
     for j in range(n_qubits):
       p += Program(RY(params[j],j))
   return p
